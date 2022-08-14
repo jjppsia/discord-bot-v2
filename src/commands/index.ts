@@ -18,71 +18,71 @@ export default [
   new Command({
     name: 'rolecreate',
     runner: rolecreate,
-    builder: rolecreateBuilder,
+    builder: rolecreateBuilder
   }),
   new Command({
     name: 'roleset',
     runner: roleset,
-    builder: rolesetBuilder,
+    builder: rolesetBuilder
   }),
   new Command({
     name: 'invitemember',
     runner: invitemember,
-    builder: invitememberBuilder,
+    builder: invitememberBuilder
   }),
   new Command({
     name: 'inviterole',
     runner: inviterole,
-    builder: inviteroleBuilder,
+    builder: inviteroleBuilder
   }),
   new Command({
     name: 'roledelete',
     runner: roledelete,
-    builder: roledeleteBuilder,
+    builder: roledeleteBuilder
   }),
   new Command({
     name: 'roleremove',
     runner: roleremove,
-    builder: roleremoveBuilder,
+    builder: roleremoveBuilder
   }),
   new Command({
     name: 'rolesetrole',
     runner: rolesetrole,
-    builder: rolesetroleBuilder,
+    builder: rolesetroleBuilder
   }),
   new Command({
     name: 'keywordlist',
     runner: keywordlist,
-    builder: keywordlistBuilder,
+    builder: keywordlistBuilder
   }),
   new Command({
     name: 'info',
     runner: info,
-    builder: infoBuilder,
+    builder: infoBuilder
   }),
   new Command({
     name: 'leavechannel',
     runner: leavechannel,
-    builder: leavechannelBuilder,
+    builder: leavechannelBuilder
   }),
   new Command({
     name: 'createchannel',
     runner: createchannel,
-    builder: createchannelBuilder,
+    builder: createchannelBuilder
   }),
   new Command({
     name: 'uninviterole',
     runner: uninviterole,
-    builder: uninviteroleBuilder,
+    builder: uninviteroleBuilder
   }),
   new Command({
     name: 'uninvitemember',
     runner: uninvitemember,
-    builder: uninvitememberBuilder,
+    builder: uninvitememberBuilder
   }),
   new Command({
     name: 'invitechannel',
     runner: invitechannel,
-    builder: invitechannelBuilder,
-  }),
+    builder: invitechannelBuilder
+  })
 ] as Command[]

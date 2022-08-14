@@ -3,12 +3,9 @@ import axios from 'axios'
 import { Client, CommandInteraction } from 'discord.js'
 import si from 'systeminformation'
 
-export default async function info(
-  _client: Client,
-  interaction: CommandInteraction
-) {
+export default async function info(_client: Client, interaction: CommandInteraction) {
   interaction.deferReply({
-    ephemeral: true,
+    ephemeral: true
   })
   const osInfo = await si.osInfo()
   const versions = await si.versions()

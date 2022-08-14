@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
-    "dev:deploy": "ts-node src/deploy.ts"
+    "dev:deploy": "ts-node src/deploy.ts",
+    "pretty": "prettier --write"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "dotenv": "^16.0.1",
     "eslint": "^8.18.0",
     "nodemon": "^2.0.16",
+    "prettier": "^2.7.1",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
   },

@@ -1,6 +1,6 @@
 export const keywords = [
   {
     key: 'joel',
-    message: 'pogi',
-  },
+    message: 'pogi'
+  }
 ]

@@ -1,10 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
 import { Client, CommandInteraction, Role } from 'discord.js'
 
-export default async function roleremove(
-  _client: Client,
-  interaction: CommandInteraction
-) {
+export default async function roleremove(_client: Client, interaction: CommandInteraction) {
   const user = interaction.options.getUser('user', true)
   const role = interaction.options.getRole('role', true)
 
@@ -18,13 +15,6 @@ export default async function roleremove(
 export const roleremoveBuilder = new SlashCommandBuilder()
   .setName('roleremove')
   .setDescription('Removes a role from user')
-  .addUserOption((option) =>
-    option
-      .setName('user')
-      .setDescription('User to remove a role from')
-      .setRequired(true)
-  )
-  .addRoleOption((option) =>
-    option.setName('role').setDescription('Role to remove').setRequired(true)
-  )
+  .addUserOption((option) => option.setName('user').setDescription('User to remove a role from').setRequired(true))
+  .addRoleOption((option) => option.setName('role').setDescription('Role to remove').setRequired(true))
   .setDMPermission(false)

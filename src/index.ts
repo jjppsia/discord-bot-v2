@@ -9,9 +9,9 @@ const client = new Client({
     Intents.FLAGS.GUILD_MEMBERS,
     Intents.FLAGS.GUILD_MESSAGES,
     Intents.FLAGS.GUILD_PRESENCES,
-    Intents.FLAGS.DIRECT_MESSAGES,
+    Intents.FLAGS.DIRECT_MESSAGES
   ],
-  partials: ['MESSAGE', 'CHANNEL'],
+  partials: ['MESSAGE', 'CHANNEL']
 })
 
 client.once('ready', () => {
@@ -20,9 +20,7 @@ client.once('ready', () => {
 
 client.on('messageCreate', async (message) => {
   const messageStr = message.content.toLowerCase()
-  const data = await keywords.find((document) =>
-    ` ${messageStr} `.includes(' ' + document.key + ' ')
-  )
+  const data = await keywords.find((document) => ` ${messageStr} `.includes(' ' + document.key + ' '))
 
   if (data && message.author.id !== client.user.id) {
     message.reply(data.message)
@@ -34,12 +32,8 @@ client.on('interactionCreate', async (interaction) => {
 
   const { commandName } = interaction
   const command = commands.find((command) => command.name === commandName)
-  const auditLogId = String(
-    process.env.CHANNEL_AUDIT_LOG || '1008320540320223232'
-  )
-  const auditLog = (await interaction.guild.channels.fetch(
-    auditLogId
-  )) as TextChannel
+  const auditLogId = String(process.env.CHANNEL_AUDIT_LOG || '1008320540320223232')
+  const auditLog = (await interaction.guild.channels.fetch(auditLogId)) as TextChannel
 
   try {
     if (command) {
@@ -60,10 +54,8 @@ client.on('interactionCreate', async (interaction) => {
     }
   } catch (e) {
     await interaction.reply({
-      content: `Error executing command:\`\`\`${
-        (e as DiscordAPIError).stack
-      }\`\`\``,
-      ephemeral: true,
+      content: `Error executing command:\`\`\`${(e as DiscordAPIError).stack}\`\`\``,
+      ephemeral: true
     })
   }
 })
