@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "dev": "nodemon src/index.ts",
     "dev:deploy": "ts-node src/deploy.ts",
     "check": "prettier --check src/**/*.ts",
@@ -17,9 +17,7 @@
     "dotenv": "^16.0.1",
     "eslint": "^8.18.0",
     "nodemon": "^2.0.16",
-    "prettier": "^2.7.1",
-    "ts-node": "^10.8.1",
-    "typescript": "^4.7.4"
+    "prettier": "^2.7.1"
   },
   "engines": {
     "node": ">=16",
@@ -32,6 +30,8 @@
     "discord.js": "^13.8.0",
     "mongodb": "^4.8.1",
     "mongoose": "^6.5.2",
-    "systeminformation": "^5.12.5"
+    "systeminformation": "^5.12.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
   }
 }
