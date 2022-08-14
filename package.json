@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node ./src/index.ts",
     "dev": "nodemon src/index.ts",
     "dev:deploy": "ts-node src/deploy.ts",
     "check": "prettier --check src/**/*.ts",
@@ -14,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "dotenv": "^16.0.1",
     "eslint": "^8.18.0",
     "nodemon": "^2.0.16",
     "prettier": "^2.7.1"
@@ -28,6 +26,7 @@
     "@types/cookie-parser": "^1.4.3",
     "axios": "^0.27.2",
     "discord.js": "^13.8.0",
+    "dotenv": "^16.0.1",
     "mongodb": "^4.8.1",
     "mongoose": "^6.5.2",
     "systeminformation": "^5.12.5",
