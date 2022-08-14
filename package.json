@@ -1,0 +1,31 @@
+{
+  "name": "discord-bot-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.ts",
+    "dev:deploy": "ts-node src/deploy.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "eslint": "^8.18.0",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  },
+  "dependencies": {
+    "@discordjs/rest": "^0.5.0",
+    "@types/cookie-parser": "^1.4.3",
+    "axios": "^0.27.2",
+    "discord.js": "^13.8.0",
+    "systeminformation": "^5.12.5"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": "src",
+    "declaration": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "target": "es6",
+    "isolatedModules": false,
+    "esModuleInterop": true
+  },
+  "baseUrl": ".",
+  "exclude": ["src/modules/analytics/*", "src/modules/_template/*"]
+}
