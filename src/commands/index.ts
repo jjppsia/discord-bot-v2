@@ -1,31 +1,55 @@
+import addkeyword, { addkeywordBuilder } from './addkeyword'
 import Command from './command'
 import createchannel, { createchannelBuilder } from './createchannel'
+import createrole, { createroleBuilder } from './createrole'
+import deletekeyword, { deletekeywordBuilder } from './deletekeyword'
+import deleterole, { deleteroleBuilder } from './deleterole'
 import info, { infoBuilder } from './info'
 import invitechannel, { invitechannelBuilder } from './invitechannel'
 import invitemember, { invitememberBuilder } from './invitemember'
 import inviterole, { inviteroleBuilder } from './inviterole'
-import keywordadd, { keywordaddBuilder } from './keywordadd'
-import keyworddelete, { keyworddeleteBuilder } from './keyworddelete'
 import keywordlist, { keywordlistBuilder } from './keywordlist'
 import leavechannel, { leavechannelBuilder } from './leavechannel'
-import rolecreate, { rolecreateBuilder } from './rolecreate'
-import roledelete, { roledeleteBuilder } from './roledelete'
-import roleremove, { roleremoveBuilder } from './roleremove'
-import roleset, { rolesetBuilder } from './roleset'
-import rolesetrole, { rolesetroleBuilder } from './rolesetrole'
+import removerole, { removeroleBuilder } from './removerole'
+import setrole, { setroleBuilder } from './setrole'
 import uninvitemember, { uninvitememberBuilder } from './uninvitemember'
 import uninviterole, { uninviteroleBuilder } from './uninviterole'
 
 export default [
   new Command({
-    name: 'rolecreate',
-    runner: rolecreate,
-    builder: rolecreateBuilder
+    name: 'addkeyword',
+    runner: addkeyword,
+    builder: addkeywordBuilder
   }),
   new Command({
-    name: 'roleset',
-    runner: roleset,
-    builder: rolesetBuilder
+    name: 'createchannel',
+    runner: createchannel,
+    builder: createchannelBuilder
+  }),
+  new Command({
+    name: 'createrole',
+    runner: createrole,
+    builder: createroleBuilder
+  }),
+  new Command({
+    name: 'deletekeyword',
+    runner: deletekeyword,
+    builder: deletekeywordBuilder
+  }),
+  new Command({
+    name: 'deleterole',
+    runner: deleterole,
+    builder: deleteroleBuilder
+  }),
+  new Command({
+    name: 'info',
+    runner: info,
+    builder: infoBuilder
+  }),
+  new Command({
+    name: 'invitechannel',
+    runner: invitechannel,
+    builder: invitechannelBuilder
   }),
   new Command({
     name: 'invitemember',
@@ -38,39 +62,9 @@ export default [
     builder: inviteroleBuilder
   }),
   new Command({
-    name: 'roledelete',
-    runner: roledelete,
-    builder: roledeleteBuilder
-  }),
-  new Command({
-    name: 'keywordadd',
-    runner: keywordadd,
-    builder: keywordaddBuilder
-  }),
-  new Command({
-    name: 'roleremove',
-    runner: roleremove,
-    builder: roleremoveBuilder
-  }),
-  new Command({
-    name: 'rolesetrole',
-    runner: rolesetrole,
-    builder: rolesetroleBuilder
-  }),
-  new Command({
     name: 'keywordlist',
     runner: keywordlist,
     builder: keywordlistBuilder
-  }),
-  new Command({
-    name: 'keyworddelete',
-    runner: keyworddelete,
-    builder: keyworddeleteBuilder
-  }),
-  new Command({
-    name: 'info',
-    runner: info,
-    builder: infoBuilder
   }),
   new Command({
     name: 'leavechannel',
@@ -78,14 +72,14 @@ export default [
     builder: leavechannelBuilder
   }),
   new Command({
-    name: 'createchannel',
-    runner: createchannel,
-    builder: createchannelBuilder
+    name: 'removerole',
+    runner: removerole,
+    builder: removeroleBuilder
   }),
   new Command({
-    name: 'uninviterole',
-    runner: uninviterole,
-    builder: uninviteroleBuilder
+    name: 'setrole',
+    runner: setrole,
+    builder: setroleBuilder
   }),
   new Command({
     name: 'uninvitemember',
@@ -93,8 +87,8 @@ export default [
     builder: uninvitememberBuilder
   }),
   new Command({
-    name: 'invitechannel',
-    runner: invitechannel,
-    builder: invitechannelBuilder
+    name: 'uninviterole',
+    runner: uninviterole,
+    builder: uninviteroleBuilder
   })
 ] as Command[]
