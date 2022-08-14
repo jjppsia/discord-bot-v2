@@ -1,7 +1,7 @@
 import { Client, DiscordAPIError, Intents, MessageEmbed, TextChannel } from 'discord.js'
 import 'dotenv/config'
 import commands from './commands'
-import { keywords } from './commands/keywords'
+import db from './utils/db'
 import { getPokemon } from './api/pokemon'
 
 const client = new Client({
@@ -64,8 +64,11 @@ client.on('messageCreate', async (message) => {
 })
 
 client.on('messageCreate', async (message) => {
+  const { keywords } = await db()
   const messageStr = message.content.toLowerCase()
-  const data = await keywords.find((obj) => ` ${messageStr} `.includes(' ' + obj.key + ' '))
+  const data = (await keywords.find().toArray()).find((document) =>
+    ` ${messageStr} `.includes(' ' + document.key + ' ')
+  )
 
   if (data && message.author.id !== client.user.id) {
     message.reply(data.message)

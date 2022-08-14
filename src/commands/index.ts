@@ -4,6 +4,8 @@ import info, { infoBuilder } from './info'
 import invitechannel, { invitechannelBuilder } from './invitechannel'
 import invitemember, { invitememberBuilder } from './invitemember'
 import inviterole, { inviteroleBuilder } from './inviterole'
+import keywordadd, { keywordaddBuilder } from './keywordadd'
+import keyworddelete, { keyworddeleteBuilder } from './keyworddelete'
 import keywordlist, { keywordlistBuilder } from './keywordlist'
 import leavechannel, { leavechannelBuilder } from './leavechannel'
 import rolecreate, { rolecreateBuilder } from './rolecreate'
@@ -41,6 +43,11 @@ export default [
     builder: roledeleteBuilder
   }),
   new Command({
+    name: 'keywordadd',
+    runner: keywordadd,
+    builder: keywordaddBuilder
+  }),
+  new Command({
     name: 'roleremove',
     runner: roleremove,
     builder: roleremoveBuilder
@@ -54,6 +61,11 @@ export default [
     name: 'keywordlist',
     runner: keywordlist,
     builder: keywordlistBuilder
+  }),
+  new Command({
+    name: 'keyworddelete',
+    runner: keyworddelete,
+    builder: keyworddeleteBuilder
   }),
   new Command({
     name: 'info',
