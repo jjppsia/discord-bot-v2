@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
     "dev:deploy": "ts-node src/deploy.ts",
-    "pretty": "prettier --write"
+    "check": "prettier --check src/**/*.ts",
+    "pretty": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "@types/cookie-parser": "^1.4.3",
     "axios": "^0.27.2",
     "discord.js": "^13.8.0",
+    "node-fetch": "^3.2.10",
     "systeminformation": "^5.12.5"
   }
 }

@@ -1,13 +1,15 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
 import { Client, CommandInteraction } from 'discord.js'
-import { keywords } from '../keywords'
+import { keywords } from './keywords'
 
 export default async function keywordlist(_client: Client, interaction: CommandInteraction) {
-  const keywordList = await keywords.map((keyword) => {
-    return `**${keyword.key}**: \`${keyword.message}\`\n━━━━━━━━━━━━━━━━━━━━━━━━━\n`
-  })
+  const keywordList = await keywords
+    .map((keyword) => {
+      return `**${keyword.key}**: \`${keyword.message}\`\n`
+    })
+    .join('')
 
-  interaction.reply(`Here is a list of keywords:\n${keywordList}`)
+  interaction.reply(`List of keywords:\n\n${keywordList}`)
 }
 
 export const keywordlistBuilder = new SlashCommandBuilder()
