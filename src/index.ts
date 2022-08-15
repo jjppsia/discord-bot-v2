@@ -27,7 +27,7 @@ client.on('messageCreate', async (message) => {
 
     try {
       const pokeData = await getPokemon(pokemon)
-      const { sprites, stats, weight, name, id, base_experience, abilities, types } = pokeData
+      const { sprites, stats, weight, name, id, base_experience } = pokeData
       const embed = new MessageEmbed()
         .setTitle(`${name} #${id}`)
         .setThumbnail(`${sprites.front_default}`)

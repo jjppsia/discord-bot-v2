@@ -6,10 +6,12 @@ export default async function addkeyword(_client: Client, interaction: CommandIn
   const { keywords } = await db()
   const key = interaction.options.getString('key').toLowerCase()
   const message = interaction.options.getString('message')
+
   keywords.insertOne({
     key,
     message
   })
+
   interaction.reply(`Added a new Keyword:\n**Word:** \`${key}\`\n**Message:** \`${message}\``)
 }
 
