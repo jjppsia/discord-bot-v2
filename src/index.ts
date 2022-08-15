@@ -40,7 +40,7 @@ client.on('messageCreate', async (message) => {
 
       message.reply({ embeds: [embed] })
     } catch (err) {
-      message.reply(`Pokemon ${pokemon} does not exist.`)
+      message.reply(`Walang pokemon na ganyan gago.`)
     }
   }
 })
