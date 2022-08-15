@@ -38,24 +38,6 @@ client.on('messageCreate', async (message) => {
 
       stats.forEach((stat) => embed.addFields({ name: `${stat.stat.name}`, value: `${stat.base_stat}`, inline: true }))
 
-      let count = 0
-
-      types.map((type) => {
-        count += 1
-        embed.addFields({ name: `Type - ${count}`, value: `${type.type.name}`, inline: count <= 2 ? false : true })
-      })
-
-      count = 0
-
-      abilities.forEach((ability) => {
-        count += 1
-        embed.addFields({
-          name: `Ability - ${count}`,
-          value: `${ability.ability.name}`,
-          inline: count <= 2 ? false : true
-        })
-      })
-
       message.reply({ embeds: [embed] })
     } catch (err) {
       message.reply(`Pokemon ${pokemon} does not exist.`)
