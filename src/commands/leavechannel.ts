@@ -12,5 +12,5 @@ export default async function leavechannel(_client: Client, interaction: Command
 
 export const leavechannelBuilder = new SlashCommandBuilder()
   .setName('leavechannel')
-  .setDescription('Leave this Discord Channel. (Note you must ask someone else in the channel to add you back.)')
+  .setDescription('Leave this discord channel')
   .setDMPermission(false)

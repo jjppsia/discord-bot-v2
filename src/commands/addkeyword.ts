@@ -17,7 +17,7 @@ export default async function addkeyword(_client: Client, interaction: CommandIn
 
 export const addkeywordBuilder = new SlashCommandBuilder()
   .setName('addkeyword')
-  .setDescription('Add a new keyword to Dashbot!')
+  .setDescription('Add a new keyword to bot-silog')
   .addStringOption((option) =>
     option.setName('key').setDescription('Trigger word (non-case sensitive)').setRequired(true)
   )

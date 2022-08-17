@@ -21,7 +21,7 @@ export default async function invitechannel(_client: Client, interaction: Comman
 
 export const invitechannelBuilder = new SlashCommandBuilder()
   .setName('invitechannel')
-  .setDescription('Invite all members of another channel to this Channel')
+  .setDescription('Invite all members of another channel to this channel')
   .addChannelOption((option) =>
     option.setName('channel').setDescription('Channel to get members from').addChannelTypes(0)
   )

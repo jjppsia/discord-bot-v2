@@ -13,6 +13,6 @@ export default async function inviterole(_client: Client, interaction: CommandIn
 
 export const inviteroleBuilder = new SlashCommandBuilder()
   .setName('inviterole')
-  .setDescription('Invite a role to this Channel')
+  .setDescription('Invite a role to this channel')
   .addRoleOption((option) => option.setName('role').setDescription('Server Role').setRequired(true))
   .setDMPermission(false)

@@ -13,6 +13,6 @@ export default async function invitemember(_client: Client, interaction: Command
 
 export const invitememberBuilder = new SlashCommandBuilder()
   .setName('invitemember')
-  .setDescription('Invite a Discord Server Member to this Channel')
+  .setDescription('Invite a discord server member to this channel')
   .addUserOption((option) => option.setName('member').setDescription('Server Member').setRequired(true))
   .setDMPermission(false)
