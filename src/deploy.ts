@@ -1,7 +1,7 @@
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v9'
 import 'dotenv/config'
-import commandsList from './commands'
+import commandsList from './commands/slashCommands'
 
 const commands = commandsList.map((command) => command.builder).map((command) => command.toJSON())
 

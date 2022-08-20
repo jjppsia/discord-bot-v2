@@ -1,8 +1,9 @@
-import { Client, DiscordAPIError, Intents, MessageEmbed, TextChannel } from 'discord.js'
+import { Client, DiscordAPIError, Intents, TextChannel } from 'discord.js'
 import 'dotenv/config'
-import commands from './commands'
+import commands from './commands/slashCommands'
 import db from './utils/db'
-import { getPokemon } from './api/pokemon'
+import pokemon from './commands/pokemon'
+import movie from './commands/movie'
 
 const client = new Client({
   intents: [
@@ -19,31 +20,8 @@ client.once('ready', () => {
   console.log('Ready!')
 })
 
-client.on('messageCreate', async (message) => {
-  if (message.author.bot) return
-
-  if (message.content.toLowerCase().startsWith('!pokemon')) {
-    const pokemon = message.content.toLowerCase().split(' ')[1]
-
-    try {
-      const pokeData = await getPokemon(pokemon)
-      const { sprites, stats, weight, name, id, base_experience } = pokeData
-      const embed = new MessageEmbed()
-        .setTitle(`${name} #${id}`)
-        .setThumbnail(`${sprites.front_default}`)
-        .addFields([
-          { name: 'Weight', value: `${weight}` },
-          { name: 'Base Experiece', value: `${base_experience}` }
-        ])
-
-      stats.forEach((stat) => embed.addFields({ name: `${stat.stat.name}`, value: `${stat.base_stat}`, inline: true }))
-
-      message.reply({ embeds: [embed] })
-    } catch (err) {
-      message.reply(`Walang pokemon na ganyan gago.`)
-    }
-  }
-})
+client.on('messageCreate', pokemon)
+client.on('messageCreate', movie)
 
 client.on('messageCreate', async (message) => {
   const { keywords } = await db()

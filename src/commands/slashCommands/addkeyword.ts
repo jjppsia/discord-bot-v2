@@ -1,6 +1,6 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
 import { Client, CommandInteraction } from 'discord.js'
-import db from '../utils/db'
+import db from '../../utils/db'
 
 export default async function addkeyword(_client: Client, interaction: CommandInteraction) {
   const { keywords } = await db()
